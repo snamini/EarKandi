@@ -8,28 +8,53 @@ import Card from '../components/Card';
 // // Home inherited a bunch of things from the component
 class Home extends Component {
   render(){
-    return (<div>
-    <Header/>
-    <div>
-
-      {/* JUMBOTRON */}
+    return (
       <div>
-        <h1>Be there. Live through your music. Beats Me is a bleh bleh bleh.</h1>
-        <form>
-          <label>Search</label>
-          <input></input>
-        </form>
+      <Header/>
+      <div className = "container">
+
+          <div>
+            {/* JUMBOTRON */}
+            <div>
+              <h1>EarKandi</h1>
+              <form>
+                <label>Search</label>
+                <input></input>
+              </form>
+            </div>
+          </div>
+
+      <div className = "row">
+        <div className = "col s3">
+          <Card/>
+        </div>
+        <div className = "col s3">
+          <Card/>
+        </div>
+        <div className = "col s3">
+          <Card/>
+        </div>
+        <div className = "col s3">
+          <Card/>
+        </div>
+        <div className = "col s3">
+          <Card/>
+        </div>
+        <div className = "col s3">
+          <Card/>
+        </div>
+        <div className = "col s3">
+          <Card/>
+        </div>
+        <div className = "col s3">
+          <Card/>
+        </div>
+
+
+
+
       </div>
 
-      <hr />
-
-
-      {/* BODY WITH CARDS */}
-      <row>
-        <Card className="col s3"/>
-        <Card className="col s3"/>
-        <Card className="col s3"/>
-      </row>
 
     </div>
     <Footer/>
