@@ -5,6 +5,7 @@ import index from './index.js';
 import Home from './containers/Home';
 import Portfolio from './containers/Portfolio';
 import Community from './containers/Community';
+import Challenges from './containers/Challenges';
 
 // this is an annonomous function. all it does is return a new route and the path to show.
 // the component will be what we always want to show when going to page /, so App
@@ -15,5 +16,6 @@ export default () => {
 		<IndexRoute component={Home}/>
 		<Route path="/portfolio" component={Portfolio} />
 		<Route path="/community" component={Community} />
+		<Route path="/challenges" component={Challenges} />
 	</Route>;
 };

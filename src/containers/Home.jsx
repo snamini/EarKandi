@@ -7,59 +7,58 @@ import Card from '../components/Card';
 // then we use that component class that we just imported to make our special components
 // // Home inherited a bunch of things from the component
 class Home extends Component {
-  render(){
-    return (
-      <div>
-      <Header/>
-      <div className = "container">
-
-          <div>
-            {/* JUMBOTRON */}
+    render() {
+        return (
             <div>
-              <h1>EarKandi</h1>
-              <form>
-                <label>Search</label>
-                <input></input>
-              </form>
+{/*-------------------------Header------------------------*/}
+                <Header/>
+{/*-------------------------Page Content------------------*/}
+                <div className="container">
+{/*-------------------------Jumbotron---------------------*/}
+                    <div>
+                        <h1>Mimps</h1>
+                        <h5>
+                            Music from the Truth
+                        </h5>
+{/*-------------------------Search Bar--------------------*/}
+                        <form>
+                            <label>Search A Genre</label>
+                            <input></input>
+                        </form>
+                    </div>
+{/*-------------------------Card Section------------------*/}
+                    <div className="row">
+                        <div className="col s3">
+                            <Card/>
+                        </div>
+                        <div className="col s3">
+                            <Card/>
+                        </div>
+                        <div className="col s3">
+                            <Card/>
+                        </div>
+                        <div className="col s3">
+                            <Card/>
+                        </div>
+                        <div className="col s3">
+                            <Card/>
+                        </div>
+                        <div className="col s3">
+                            <Card/>
+                        </div>
+                        <div className="col s3">
+                            <Card/>
+                        </div>
+                        <div className="col s3">
+                            <Card/>
+                        </div>
+                    </div>
+                </div>
+{/*-------------------------Footer-----------------------*/}
+                <Footer/>
             </div>
-          </div>
-
-      <div className = "row">
-        <div className = "col s3">
-          <Card/>
-        </div>
-        <div className = "col s3">
-          <Card/>
-        </div>
-        <div className = "col s3">
-          <Card/>
-        </div>
-        <div className = "col s3">
-          <Card/>
-        </div>
-        <div className = "col s3">
-          <Card/>
-        </div>
-        <div className = "col s3">
-          <Card/>
-        </div>
-        <div className = "col s3">
-          <Card/>
-        </div>
-        <div className = "col s3">
-          <Card/>
-        </div>
-
-
-
-
-      </div>
-
-
-    </div>
-    <Footer/>
-  </div> )
-  }
+        );
+    }
 }
 
 export default Home;
