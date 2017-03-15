@@ -8,7 +8,6 @@ import makeRoutes from './routes';
 const APP_ENTRY = <Router history={browserHistory}>{makeRoutes()}
 								</Router>;
 
-
 ReactDOM.render(
 	APP_ENTRY,
 	document.getElementById('root')
