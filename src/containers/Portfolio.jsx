@@ -31,6 +31,7 @@ constructor(props, context) {
     super(props, context)
     this.state = {
       profile: props.auth.getProfile()
+      // loggedIn: props.auth.isLoggedIn()
     }
     // props.auth.on('profile_updated', (newProfile) => {
     //   this.setState({profile: newProfile})
@@ -55,7 +56,6 @@ constructor(props, context) {
                         <div className="col s4" id="aboutme">
                            
                              <ProfileDetails profile={profile}></ProfileDetails>
-
                             <Button onClick={this.logout.bind(this)}>Logout</Button>
                           <CardPanel className=" black-text">
                               <Row>
