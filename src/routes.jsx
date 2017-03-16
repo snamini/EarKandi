@@ -40,19 +40,21 @@ const requireAuth = (nextState, replace) => {
 // inside app, we will have index routes
 // if we go to index of our website, it will open up the home component
 export default () => {
-
+ if (auth.loggedIn()){
 	return <Route path="/"component={Container} auth={auth}>
-
-   		<IndexRoute isLoggedIn={true} component={Home}/>
+ 	   	<IndexRoute component={Home}/>
 		<Route path="/portfolio" isLoggedIn={true} component={Portfolio} />
 		<Route path="/community" isLoggedIn={true}  component={Community} />
 		<Route path="/challenges" isLoggedIn={true} component={Challenges} /> 
-    
+    </Route> 
+ } else {
+ 		return <Route path="/"component={Container} auth={auth}>   
+ 		<IndexRoute component={Home}/>
 		<Route path="/register" component={Register} />
 		<Route path="/Login" component={Login} />
 		<Route path="/Register" component={Register} />	
-      <Route path="home" component={Home} onEnter={requireAuth} />
-      <Route path="login" component={Login} />
-
+	      <Route path="home" component={Home} onEnter={requireAuth} />
+	      <Route path="login" component={Login} />
 	</Route>;
+ }
 };

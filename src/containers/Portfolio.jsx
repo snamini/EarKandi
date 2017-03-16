@@ -12,7 +12,7 @@ import ProfileDetails from '../components/ProfileDetails'
 
 import { Row, Col, CardPanel, CardTitle} from 'react-materialize';
 import { Input} from 'react-materialize';
-import { Pagination, Chip, Tag, Icon, Button, NavItem } from 'react-materialize';
+import { Pagination, Chip, Tag, Icon, NavItem } from 'react-materialize';
 import Card from '../components/Card';
 
 // then we use that component class that we just imported to make our special components
@@ -53,7 +53,7 @@ constructor(props, context) {
 {/*-------------------------Card Section------------------*/}
                     <div className="row">
                         <div className="col s4" id="aboutme">
-                                  <h3>{profile.name}!</h3>
+                           
                              <ProfileDetails profile={profile}></ProfileDetails>
 
                             <Button onClick={this.logout.bind(this)}>Logout</Button>
@@ -62,7 +62,7 @@ constructor(props, context) {
                                   <Col s={12}>
                                       <Chip>
                                         <image src='../../public/assets/yuna.jpg' alt='Contact Person' />
-                                          Jane Doe
+                                              {profile.name}!
                                       </Chip>
                                   </Col>
                               </Row>
