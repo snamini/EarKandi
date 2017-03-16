@@ -1,9 +1,9 @@
-/*#aboutme {
-border: 1px ;
-border-style: groove;
+#jumbotron {
+
 }
 
-#port {
-border: 1px;
-border-style: groove;
-}*/
+#jumbotron-img {
+  width: 100% inherit;
+  height: 200px;
+  background: pink;
+}

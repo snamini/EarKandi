@@ -2,11 +2,11 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import './Portfolio.css';
 import { Row, Col, CardPanel, CardTitle} from 'react-materialize';
 import { Input} from 'react-materialize';
 import { Pagination, Chip, Tag, Icon, Button, NavItem } from 'react-materialize';
 import Card from '../components/Card';
+import './Portfolio.css';
 // then we use that component class that we just imported to make our special components
 // // portfolio inherited a bunch of things from the component
 class Portfolio extends Component {
@@ -17,14 +17,37 @@ class Portfolio extends Component {
                 <Header isLoggedIn={this.props.route.isLoggedIn}/>
 {/*-------------------------Page Content------------------*/}
                 <div className="container">
+{/*-------------------------JUMBOTRON------------------*/}
+                    <div className="row">
+                      <div className="col s12" id="jumbotron">
+
+                        <div className="card">
+                          <div className="card-image">
+                            <img src="assets/sample-1.jpg" />
+                            <span className="card-title">Card Title</span>
+                          </div>
+                          <div className="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.
+                            I am convenient because I require little markup to use effectively.</p>
+                          </div>
+                          <div className="card-action">
+                            <a href="#">This is a link</a>
+                          </div>
+                        </div>
+
+
+                      </div>
+
+                    </div>
 {/*-------------------------Card Section------------------*/}
+
                     <div className="row">
                         <div className="col s4" id="aboutme">
                           <CardPanel className=" black-text">
                               <Row>
                                   <Col s={12}>
                                       <Chip>
-                                        <image src='../../public/assets/yuna.jpg' alt='Contact Person' />
+                                        <image src='assets/yuna.jpg' alt='Contact Person' />
                                           Jane Doe
                                       </Chip>
                                   </Col>

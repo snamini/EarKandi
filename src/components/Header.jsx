@@ -36,9 +36,11 @@ export default class MyHeader extends React.Component {
 
   render(){
     return (
-			<Navbar brand='logo' right>
-		  	{this.getNavItems()}
-		</Navbar>
+			<div className= "navbar-fixed">
+				<Navbar brand='logo' right>
+		  		{this.getNavItems()}
+				</Navbar>
+			</div>
 
 
 
