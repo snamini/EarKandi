@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Row, Col, CardPanel, CardTitle} from 'react-materialize';
 import { Input} from 'react-materialize';
-import { Pagination, Chip, Tag, Icon, Button, NavItem } from 'react-materialize';
+import { Pagination, Chip, Tag, Icon, Button, NavItem, CollectionItem, Collection, Collapsible, CollapsibleItem} from 'react-materialize';
 import Card from '../components/Card';
 import './Portfolio.css';
 // then we use that component class that we just imported to make our special components
@@ -18,28 +18,8 @@ class Portfolio extends Component {
 {/*-------------------------Page Content------------------*/}
                 <div className="container">
 {/*-------------------------JUMBOTRON------------------*/}
-                    <div className="row">
-                      <div className="col s12" id="jumbotron">
-
-                        <div className="card">
-                          <div className="card-image">
-                            <img src="assets/sample-1.jpg" />
-                            <span className="card-title">Card Title</span>
-                          </div>
-                          <div className="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.
-                            I am convenient because I require little markup to use effectively.</p>
-                          </div>
-                          <div className="card-action">
-                            <a href="#">This is a link</a>
-                          </div>
-                        </div>
-
-
-                      </div>
-
-                    </div>
-{/*-------------------------Card Section------------------*/}
+                    <Card></Card>
+{/*-------------------------aboutme------------------*/}
 
                     <div className="row">
                         <div className="col s4" id="aboutme">
@@ -72,31 +52,27 @@ class Portfolio extends Component {
                                   </CardPanel>
                                 </Row>
                                 <Row>
-                                  <CardPanel>
-                                    <Row>
-                                      <Col s={12}>
-                                        <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
-                                      </Col>
-                                    </Row>
-                                    <Row>
-                                      <Col s={12}>
-                                        <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
-                                      </Col>
-                                    </Row>
-                                    <Row>
-                                      <Col s={12}>
-                                        <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
-                                      </Col>
-                                    </Row>
-                                  </CardPanel>
+                                    <Collection>
+                                      <CollectionItem>Alvin</CollectionItem>
+                                      <CollectionItem>Alvin</CollectionItem>
+                                      <CollectionItem>Alvin</CollectionItem>
+                                      <CollectionItem>Alvin</CollectionItem>
+                                    </Collection>
+
                                 </Row>
                                 <Row>
-                                  <CardPanel>
-                                    <Row>
-                                      <Col s={12}>
-                                        <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
-                                      </Col>
-                                    </Row>
+                                  <Collapsible popout>
+                                    <CollapsibleItem header='First' icon='filter_drama'>
+                                      Lorem ipsum dolor sit amet.
+                                    </CollapsibleItem>
+                                    <CollapsibleItem header='Second' icon='place'>
+                                      Lorem ipsum dolor sit amet.
+                                    </CollapsibleItem>
+                                    <CollapsibleItem header='Third' icon='whatshot'>
+                                      Lorem ipsum dolor sit amet.
+                                    </CollapsibleItem>
+                                  </Collapsible>
+                                </Row>
                                     <Row>
                                       <Col s={12}>
                                         <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
@@ -108,12 +84,10 @@ class Portfolio extends Component {
                                         </Col>
                                       </Row>
                                     </CardPanel>
-                                </Row>
-                        </CardPanel>
                         </div>
                         <div className="col s8" id="port">
                           <CardPanel className=" black-text">
-{/*-------------------------Title------------------*/}
+{/*-------------------------Portfolio Title------------------*/}
                             <h1 className="porfolio-title">Portfolio</h1>
 {/*-------------------------Upload------------------*/}
                             <Row>
@@ -138,9 +112,15 @@ class Portfolio extends Component {
                                 </Col>
                             </Row>
 {/*-------------------------Cards------------------*/}
+
                             <Row>
-                                <Col s={6}>
-                                    <Card/>
+                                <Col s={12}>
+
+                                  <CardPanel>
+                                    <div className="video-container">
+                                        <iframe width="640" height="360" src="https://www.youtube.com/embed/10r9ozshGVE" frameborder="0" allowfullscreen=""></iframe>
+                                    </div>
+                                  </CardPanel>
                                 </Col>
                                 <Col s={6}>
                                     <Card/>

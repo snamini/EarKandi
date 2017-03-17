@@ -6,7 +6,7 @@ import Card from '../components/Card';
 import SearchBar from '../components/SearchBar';
 import CheckBox from '../components/SearchBar';
 import './Home.css';
-import { Row, Col, CardPanel, Input, Icon, Dropdown, Button} from 'react-materialize';
+import { Row, Col, CardPanel, Input, Icon, Dropdown, Button, Slider, Slide} from 'react-materialize';
 // then we use that component class that we just imported to make our special components
 // // Home inherited a bunch of things from the component
 class Home extends Component {
@@ -19,6 +19,25 @@ class Home extends Component {
 {/*-------------------------Title, Search Bar, Drop Down Genre, Followers button--------------------*/}
                     <Row></Row>
                       <h1 class="title">Creatington</h1>
+                      <Slider>
+                          <Slide
+                            src="http://lorempixel.com/580/250/nature/1"
+                            title="This is our big Tagline!">
+                            Here's our small slogan.
+                          </Slide>
+                          <Slide
+                            src="http://lorempixel.com/580/250/nature/2"
+                            title="Left aligned Caption"
+                            placement="left">
+                            Here's our small slogan.
+                          </Slide>
+                          <Slide
+                            src="http://lorempixel.com/580/250/nature/3"
+                            title="Right aligned Caption"
+                            placement="right">
+                            Here's our small slogan.
+                          </Slide>
+                        </Slider>
                       <Row>
                         <Col s={5} className='search-bar'>
                           <SearchBar/>
