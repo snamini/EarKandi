@@ -13,8 +13,10 @@ class Home extends Component {
     render() {
         return (
             <div>
+
 {/*------------------------------------nav bar header---------------------------------------*/}
                 <Header isLoggedIn={this.props.route.isLoggedIn}/>
+
 
 {/*-------------------------Title, Search Bar, Drop Down Genre, Followers button--------------------*/}
                     <Row></Row>
@@ -98,6 +100,7 @@ class Home extends Component {
 {/*-------------------------Footer-----------------------*/}
                 <Footer/>
             </div>
+
         );
     }
 }
