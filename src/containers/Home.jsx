@@ -18,7 +18,7 @@ class Home extends Component {
 
 {/*-------------------------Title, Search Bar, Drop Down Genre, Followers button--------------------*/}
                     <Row></Row>
-                      <h1 class="title">Creatington</h1>
+                      <h1 className="title">Creatington</h1>
                       <Row>
                         <Col s={5} className='search-bar'>
                           <SearchBar/>
