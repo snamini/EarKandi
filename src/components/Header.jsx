@@ -24,7 +24,7 @@ export default class MyHeader extends React.Component {
 				 <NavItem key="challenges" href='/challenges'>Challenges</NavItem>];
 			} else {
 				navItems = [
-					<NavItem key="login" href='components.html'>Login</NavItem>
+					<NavItem key="login" href='/Login'>Login</NavItem>
 				];
 
 			}
@@ -47,3 +47,4 @@ export default class MyHeader extends React.Component {
 );
 }
 }
+  

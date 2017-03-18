@@ -1,16 +1,52 @@
-// importing the component class from the react library
+  // importing the component class from the react library
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+import AuthService from '../utils/AuthService'
+import './Portfolio.css';
+
+import  { PropTypes as T } from 'react'
+import {Button} from 'react-bootstrap'
+import styles from '../styles/styles.module.css'
+import ProfileDetails from '../components/ProfileDetails'   
+        
 import { Row, Col, CardPanel, CardTitle} from 'react-materialize';
 import { Input} from 'react-materialize';
 import { Pagination, Chip, Tag, Icon, Button, NavItem, CollectionItem, Collection, Collapsible, CollapsibleItem} from 'react-materialize';
 import Card from '../components/Card';
 import './Portfolio.css';
+
 // then we use that component class that we just imported to make our special components
 // // portfolio inherited a bunch of things from the component
 class Portfolio extends Component {
+    static contextTypes = {
+    router: T.object
+  }
+static propTypes = {
+    auth: T.instanceOf(AuthService)
+  }
+
+constructor(props, context) {
+  console.log(props); //pbject
+  console.log(context);
+    super(props, context)
+    this.state = {
+      profile: props.auth.getProfile()
+      // loggedIn: props.auth.isLoggedIn()
+    }
+    // props.auth.on('profile_updated', (newProfile) => {
+    //   this.setState({profile: newProfile})
+    // })
+  }
+
+   logout(){
+    this.props.auth.logout()
+    this.context.router.push('/login');
+  }
+
   render(){
+        const { profile } = this.state
         return (
             <div>
 {/*-------------------------Header------------------------*/}
@@ -23,12 +59,16 @@ class Portfolio extends Component {
 
                     <div className="row">
                         <div className="col s4" id="aboutme">
+                           
+                             <ProfileDetails profile={profile}></ProfileDetails>
+                            <Button onClick={this.logout.bind(this)}>Logout</Button>
                           <CardPanel className=" black-text">
                               <Row>
                                   <Col s={12}>
                                       <Chip>
-                                        <image src='assets/yuna.jpg' alt='Contact Person' />
-                                          Jane Doe
+                                        
+                                        <image src='../../public/assets/yuna.jpg' alt='Contact Person' />
+                                              {profile.name}!
                                       </Chip>
                                   </Col>
                               </Row>
@@ -151,5 +191,8 @@ class Portfolio extends Component {
 }
 
 export default Portfolio;
+
+
+
 
 // how are these components used? must make sure the app knows about them. so we import them in Routes.jsx
