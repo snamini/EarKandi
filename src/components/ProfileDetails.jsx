@@ -16,10 +16,7 @@ export class ProfileDetails extends React.Component {
         <Col md={6}>
           <h3>Profile</h3>
           <p><strong>Name: </strong> {profile.name}</p>
-          <p><strong>Email: </strong> {profile.email}</p>
-          <p><strong>Nickname: </strong> {profile.nickname}</p>
-          <p><strong>Created At: </strong> {profile.created_at}</p>
-          <p><strong>Updated At: </strong> {profile.updated_at}</p>
+
         </Col>
       </Row>
     )
