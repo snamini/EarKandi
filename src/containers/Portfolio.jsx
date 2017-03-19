@@ -2,18 +2,19 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
 import AuthService from '../utils/AuthService'
 import './Portfolio.css';
 
 import  { PropTypes as T } from 'react'
-import {Button} from 'react-bootstrap'
-import styles from '../styles/styles.module.css'
-import ProfileDetails from '../components/ProfileDetails'
-
-import { Row, Col, CardPanel, CardTitle} from 'react-materialize';
+//import styles from '../styles/styles.module.css'
+import ProfileDetails from '../components/ProfileDetails'   
+        
+import { Row, Col, CardPanel} from 'react-materialize';
 import { Input} from 'react-materialize';
-import { Pagination, Chip, Tag, Icon, NavItem } from 'react-materialize';
+import { Pagination, Chip, Icon, Button, NavItem, CollectionItem, Collection, Collapsible, CollapsibleItem} from 'react-materialize';
 import Card from '../components/Card';
+import './Portfolio.css';
 
 // then we use that component class that we just imported to make our special components
 // // portfolio inherited a bunch of things from the component
@@ -27,11 +28,11 @@ static propTypes = {
 
 constructor(props, context) {
   console.log(props); //pbject
-  console.log(context);
+  // console.log(context);
     super(props, context)
     this.state = {
       profile: props.auth.getProfile()
-      // loggedIn: props.auth.isLoggedIn()
+      //loggedIn: props.auth.isLoggedIn()
     }
     // props.auth.on('profile_updated', (newProfile) => {
     //   this.setState({profile: newProfile})
@@ -51,7 +52,10 @@ constructor(props, context) {
                 <Header isLoggedIn={this.props.route.isLoggedIn}/>
 {/*-------------------------Page Content------------------*/}
                 <div className="container">
-{/*-------------------------Card Section------------------*/}
+{/*-------------------------JUMBOTRON------------------*/}
+                    <Card></Card>
+{/*-------------------------aboutme------------------*/}
+
                     <div className="row">
                         <div className="col s4" id="aboutme">
                            
@@ -61,6 +65,7 @@ constructor(props, context) {
                               <Row>
                                   <Col s={12}>
                                       <Chip>
+                                        
                                         <image src='../../public/assets/yuna.jpg' alt='Contact Person' />
                                               {profile.name}!
                                       </Chip>
@@ -86,31 +91,27 @@ constructor(props, context) {
                                   </CardPanel>
                                 </Row>
                                 <Row>
-                                  <CardPanel>
-                                    <Row>
-                                      <Col s={12}>
-                                        <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
-                                      </Col>
-                                    </Row>
-                                    <Row>
-                                      <Col s={12}>
-                                        <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
-                                      </Col>
-                                    </Row>
-                                    <Row>
-                                      <Col s={12}>
-                                        <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
-                                      </Col>
-                                    </Row>
-                                  </CardPanel>
+                                    <Collection>
+                                      <CollectionItem>Alvin</CollectionItem>
+                                      <CollectionItem>Alvin</CollectionItem>
+                                      <CollectionItem>Alvin</CollectionItem>
+                                      <CollectionItem>Alvin</CollectionItem>
+                                    </Collection>
+
                                 </Row>
                                 <Row>
-                                  <CardPanel>
-                                    <Row>
-                                      <Col s={12}>
-                                        <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
-                                      </Col>
-                                    </Row>
+                                  <Collapsible popout>
+                                    <CollapsibleItem header='First' icon='filter_drama'>
+                                      Lorem ipsum dolor sit amet.
+                                    </CollapsibleItem>
+                                    <CollapsibleItem header='Second' icon='place'>
+                                      Lorem ipsum dolor sit amet.
+                                    </CollapsibleItem>
+                                    <CollapsibleItem header='Third' icon='whatshot'>
+                                      Lorem ipsum dolor sit amet.
+                                    </CollapsibleItem>
+                                  </Collapsible>
+                                </Row>
                                     <Row>
                                       <Col s={12}>
                                         <Input s={12} label="Language" validate type='tel'><Icon>language</Icon></Input>
@@ -122,12 +123,10 @@ constructor(props, context) {
                                         </Col>
                                       </Row>
                                     </CardPanel>
-                                </Row>
-                        </CardPanel>
                         </div>
                         <div className="col s8" id="port">
                           <CardPanel className=" black-text">
-{/*-------------------------Title------------------*/}
+{/*-------------------------Portfolio Title------------------*/}
                             <h1 className="porfolio-title">Portfolio</h1>
 {/*-------------------------Upload------------------*/}
                             <Row>
@@ -152,9 +151,15 @@ constructor(props, context) {
                                 </Col>
                             </Row>
 {/*-------------------------Cards------------------*/}
+
                             <Row>
-                                <Col s={6}>
-                                    <Card/>
+                                <Col s={12}>
+
+                                  <CardPanel>
+                                    <div className="video-container">
+                                        <iframe width="640" height="360" src="https://www.youtube.com/embed/10r9ozshGVE" frameborder="0" allowfullscreen=""></iframe>
+                                    </div>
+                                  </CardPanel>
                                 </Col>
                                 <Col s={6}>
                                     <Card/>

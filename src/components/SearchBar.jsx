@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input} from 'react-materialize';
+//import { Input} from 'react-materialize';
 
 export default class SearchBar extends React.Component {
   render(){

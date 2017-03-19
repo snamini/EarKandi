@@ -10,7 +10,6 @@ export default class AuthService {
         responseType: 'token'
       }
     })
-    console.log(this.auth);
     // Add callback for lock `authenticated` event
     this.lock.on('authenticated', this._doAuthentication.bind(this))
     // binds login functions to keep this context
@@ -20,9 +19,19 @@ export default class AuthService {
   _doAuthentication(authResult) {
     // Saves the user token. 
     this.setToken(authResult.idToken)
-        console.log(authResult);
+        console.log(authResult.idToken);
     // navigate to the home route
-    browserHistory.replace('/portfolio')
+
+    // Async loads the user profile data
+    this.lock.getProfile(authResult.idToken, (error, profile) => {
+      if (error) {
+        console.log('Error loading the Profile', error)
+      } else {
+        console.log(profile);
+        this.setProfile(profile)
+  
+      }
+    })
   }
 
   login() {
@@ -32,12 +41,15 @@ export default class AuthService {
     loggedIn() {
     // Checks if there is a saved token and it's still valid
     return !!this.getToken()
+    console.log("Logged In");
   }
-    setProfile(profile){
+
+  setProfile(profile){
     // Saves profile data to localStorage
     localStorage.setItem('profile', JSON.stringify(profile))
     // Triggers profile_updated event to update the UI
-    this.emit('profile_updated', profile)
+    //this.emit('profile_updated', profile)
+     browserHistory.replace('/portfolio')         
   }
 
   getProfile(){

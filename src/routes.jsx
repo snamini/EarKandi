@@ -6,7 +6,6 @@ import Home from './containers/Home';
 import Portfolio from './containers/Portfolio';
 import Community from './containers/Community';
 import Challenges from './containers/Challenges';
-import Register from './containers/Register';
 import Login from './containers/Login';
 //Auth0
 import AuthService from './utils/AuthService'
@@ -45,9 +44,7 @@ export default () => {
 		<Route path="/portfolio" isLoggedIn={true} component={Portfolio} />
 		<Route path="/community" isLoggedIn={true}  component={Community} />
 		<Route path="/challenges" isLoggedIn={true} component={Challenges} /> 
-		<Route path="/register" component={Register} />
 		<Route path="/Login" component={Login} />
-		<Route path="/Register" component={Register} />	
 	    <Route path="/home" component={Home} onEnter={requireAuth} />
 	</Route>
 };

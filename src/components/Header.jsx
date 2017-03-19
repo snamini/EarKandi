@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavItem, Icon } from 'react-materialize'
+import { Navbar, NavItem} from 'react-materialize'
 
 // PascalCase (for classes and constructors) vs camelCase
 
@@ -36,9 +36,11 @@ export default class MyHeader extends React.Component {
 
   render(){
     return (
-			<Navbar brand='logo' right>
-		  	{this.getNavItems()}
-		</Navbar>
+
+				<Navbar brand='logo' right>
+		  		{this.getNavItems()}
+				</Navbar>
+
 
 
 
