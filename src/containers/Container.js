@@ -1,3 +1,4 @@
+
 import React, { PropTypes as T } from 'react'
 import { Jumbotron } from 'react-bootstrap'
 import styles from '../styles/styles.module.css'
@@ -21,5 +22,3 @@ export class Container extends React.Component {
 }
 
 export default Container;
-
-

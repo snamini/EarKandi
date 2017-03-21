@@ -4,23 +4,20 @@ import { Input} from 'react-materialize';
 export default class SearchBar extends React.Component {
   render(){
     return (
-
- <nav>
-   <div className="nav-wrapper">
-     <form>
-       <div className="input-field">
-         <input id="search" type="search" required/>
-         <label className="label-icon" for="search"><i className="material-icons">search</i></label>
-         <i className="material-icons">close</i>
+     <nav>
+       <div className="nav-wrapper">
+         <form>
+           <div className="input-field">
+             <input id="search" type="search" required/>
+             <label className="label-icon" htmlFor="search"><i className="material-icons">search</i></label>
+             <i className="material-icons">close</i>
+           </div>
+         </form>
        </div>
-     </form>
-   </div>
- </nav>
-
-);
+     </nav>
+   );
+  }
 }
-}
-
 
 // {/* // components/Search.jsx
 // // buildSearchResults() {

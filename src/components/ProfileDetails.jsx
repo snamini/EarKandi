@@ -22,7 +22,7 @@ export class ProfileDetails extends React.Component {
           <p><strong>Updated At: </strong> {profile.updated_at}</p>
         </Col>
       </Row>
-    )
+    );
   }
 }
 
