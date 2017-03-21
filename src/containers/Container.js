@@ -1,5 +1,6 @@
  import React from 'react'
-import { Jumbotron } from 'react-bootstrap'
+import { Jumbotron } from 'react-bootstrap';
+import Header from '../components/Header';
 //import styles from '../styles/styles.module.css'
 
 export class Container extends React.Component {
@@ -13,7 +14,7 @@ export class Container extends React.Component {
 
     return (
       <Jumbotron>
-
+        <Header isLoggedIn={this.props.route.auth.loggedIn()}/>
         {children}
       </Jumbotron>
     )

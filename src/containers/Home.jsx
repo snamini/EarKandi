@@ -13,10 +13,6 @@ class Home extends Component {
         return (
             <div>
 
-{/*------------------------------------nav bar header---------------------------------------*/}
-                <Header isLoggedIn={this.props.route.isLoggedIn}/>
-
-
 {/*-------------------------Title, Search Bar, Drop Down Genre, Followers button--------------------*/}
                     <Row></Row>
 

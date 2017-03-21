@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../components/Header';
 import Footer from '../components/Footer';
 import './Community.css';
 
@@ -9,8 +8,6 @@ export default class Community extends React.Component {
   render(){
     return (
     <div>
-{/*-------------------------Header------------------------*/}
-        <Header isLoggedIn={this.props.route.isLoggedIn}/>
 
 {/*-------------------------Page Content------------------*/}
         <div className="container">

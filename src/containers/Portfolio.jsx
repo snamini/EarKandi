@@ -27,12 +27,11 @@ static propTypes = {
   }
 
 constructor(props, context) {
-  console.log(props); //pbject
+ // console.log(props); //pbject
   // console.log(context);
     super(props, context)
     this.state = {
       profile: props.auth.getProfile()
-      //loggedIn: props.auth.isLoggedIn()
     }
     // props.auth.on('profile_updated', (newProfile) => {
     //   this.setState({profile: newProfile})
@@ -48,8 +47,6 @@ constructor(props, context) {
         const { profile } = this.state
         return (
             <div>
-{/*-------------------------Header------------------------*/}
-                <Header isLoggedIn={this.props.route.isLoggedIn}/>
 {/*-------------------------Page Content------------------*/}
                 <div className="container">
 {/*-------------------------JUMBOTRON------------------*/}
@@ -83,7 +80,7 @@ constructor(props, context) {
                                         <div className="row">
                                           <div className="input-field col s12">
                                             <textarea id="textarea1" className="materialize-textarea"></textarea>
-                                            <label for="textarea1">Music Description</label>
+                                            <label htmlFor="textarea1">Music Description</label>
                                           </div>
                                         </div>
                                       </form>
@@ -157,7 +154,7 @@ constructor(props, context) {
 
                                   <CardPanel>
                                     <div className="video-container">
-                                        <iframe width="640" height="360" src="https://www.youtube.com/embed/10r9ozshGVE" frameborder="0" allowfullscreen=""></iframe>
+                                        <iframe width="640" height="360" src="https://www.youtube.com/embed/10r9ozshGVE" frameBorder="0" allowFullScreen=""></iframe>
                                     </div>
                                   </CardPanel>
                                 </Col>
