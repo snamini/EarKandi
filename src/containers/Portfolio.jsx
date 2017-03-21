@@ -7,14 +7,14 @@ import AuthService from '../utils/AuthService'
 import './Portfolio.css';
 
 import  { PropTypes as T } from 'react'
-import {Button} from 'react-bootstrap'
-import styles from '../styles/styles.module.css'
+//import styles from '../styles/styles.module.css'
 import ProfileDetails from '../components/ProfileDetails'   
         
-import { Row, Col, CardPanel, CardTitle} from 'react-materialize';
+import { Row, Col, CardPanel } from 'react-materialize';
 import { Input} from 'react-materialize';
-import { Pagination, Chip, Tag, Icon, Button, NavItem, CollectionItem, Collection, Collapsible, CollapsibleItem} from 'react-materialize';
+import { Pagination, Chip, Icon, Button, NavItem, CollectionItem, Collection, Collapsible, CollapsibleItem} from 'react-materialize';
 import Card from '../components/Card';
+import Bookme from '../components/Bookme';
 import './Portfolio.css';
 
 // then we use that component class that we just imported to make our special components
@@ -59,7 +59,7 @@ constructor(props, context) {
 
                     <div className="row">
                         <div className="col s4" id="aboutme">
-                           
+                            <Bookme />
                              <ProfileDetails profile={profile}></ProfileDetails>
                             <Button onClick={this.logout.bind(this)}>Logout</Button>
                           <CardPanel className=" black-text">
@@ -84,7 +84,7 @@ constructor(props, context) {
                                         <div className="row">
                                           <div className="input-field col s12">
                                             <textarea id="textarea1" className="materialize-textarea"></textarea>
-                                            <label for="textarea1">Music Description</label>
+                                            <label htmlFor="textarea1">Music Description</label>
                                           </div>
                                         </div>
                                       </form>
@@ -125,6 +125,7 @@ constructor(props, context) {
                                       </Row>
                                     </CardPanel>
                         </div>
+                        
                         <div className="col s8" id="port">
                           <CardPanel className=" black-text">
 {/*-------------------------Portfolio Title------------------*/}
@@ -132,17 +133,9 @@ constructor(props, context) {
 {/*-------------------------Upload------------------*/}
                             <Row>
                               <Col s={8}>
-                                <form action="#">
-                                  <div className="file-field input-field">
-                                    <div className="btn">
-                                      <span>File</span>
-                                      <input type="file" multiple />
-                                    </div>
-                                    <div className="file-path-wrapper">
-                                      <input className="file-path validate" type="text" placeholder="Upload one or more files" />
-                                    </div>
-                                  </div>
-                                </form>
+                                <div>
+
+      </div>
                                 </Col>
                                 <Col s={1}>
                                   <NavItem href='get-started.html'><Icon>input</Icon></NavItem>
@@ -158,7 +151,7 @@ constructor(props, context) {
 
                                   <CardPanel>
                                     <div className="video-container">
-                                        <iframe width="640" height="360" src="https://www.youtube.com/embed/10r9ozshGVE" frameborder="0" allowfullscreen=""></iframe>
+                                        <iframe width="640" height="360" src="https://www.youtube.com/embed/10r9ozshGVE" frameBorder="0" allowFullScreen=""></iframe>
                                     </div>
                                   </CardPanel>
                                 </Col>
@@ -183,6 +176,7 @@ constructor(props, context) {
                         </div>
                     </div>
                 </div>
+
 {/*-------------------------Footer-----------------------*/}
                 <Footer/>
             </div>

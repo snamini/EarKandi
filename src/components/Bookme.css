@@ -1,0 +1,193 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500);
+
+$darkBlue: #0E2F56;
+$lightBlue: #118DF0;
+$pink: #FF304F;
+$lightGrey: #F8F8F8;
+$opaque: rgba(white, .4);
+
+body {
+  height: 100vh;
+  margin: 0;
+  font: 400 15px Roboto;
+  text-align: center;
+  color: white;
+  background : url('http://cbwconline.com/IMG/Codepen/Black-Lining.jpg') fixed;
+background-size: 100% 100%;
+}
+
+#modal {
+  width: 450px;
+  position: relative;
+  margin: 20px auto;
+  overflow-y: hidden;
+  border-radius: 10px 10px 0px 0px;
+  
+  #header {
+    background: $darkBlue;
+    
+    h1 {
+      font: 300 25px Roboto;
+      margin: 0;
+      padding: 10px;
+    }
+  }
+  
+  .object {
+    position: relative;
+    background: $lightGrey;
+    
+    img {
+      width: 100%;
+    }
+    
+    span {
+      position: absolute;
+      color: $darkBlue;
+      bottom: 10px;
+      right: 10px;
+    }
+  }
+  
+  form {
+    background: $lightBlue;
+    padding-top: 20px;
+    
+    input[type='radio'] {
+      display: none;
+    }
+    
+    input[type="radio"]:checked + label{
+      box-shadow: 0 0 15px rgba(black, .5);
+    }
+
+    label.card {
+      display: inline-block;
+      position: relative;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    label[for='Master'] { 
+      background: url('http://cbwconline.com/IMG/Codepen/Mastercard.svg');
+      background-size: contain;
+
+    }
+
+    label[for='Visa'] { 
+      background: url('http://cbwconline.com/IMG/Codepen/Visa.svg');
+      background-size: contain;
+    }
+    label[for='Discover'] { 
+      background: url('http://cbwconline.com/IMG/Codepen/Discover.svg');
+      background-size: contain;
+    }
+    
+    label {
+      position: absolute;
+      margin-left: 5px;
+      text-transform: uppercase;
+    }
+    
+    input {
+      color: white;
+      background: rgba(white, .3); 
+      font: 300 18px Roboto;
+      display: inline-block;
+      margin: 25px 5px 10px 5px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+    }
+    #name, #number {
+      width: 88%;
+    }
+    #expire {
+      width: calc(50% - 30px) ;
+    }
+    #cvc {
+      width: 38%;
+    }
+  }
+  
+  button {
+    background: $pink;
+    color: white;
+    font: 300 18px Roboto;
+    height: 50px;  
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+/* Remove Webkit Numerical Input Arrows */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/* Placeholder Styling */
+
+::-webkit-input-placeholder {
+   color: $opaque;
+}
+:-moz-placeholder {
+   color: $opaque;  
+}
+::-moz-placeholder {
+   color: $opaque;  
+}
+:-ms-input-placeholder {  
+   color: $opaque;  
+}
+
+/* FAB styling */
+
+#container {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  
+  &:hover:after {
+    content: attr(title); 
+    position: absolute; 
+    right: 110%;
+    top: 16px;
+    white-space: nowrap; 
+    background: #585858;
+    padding: 3px 7px; 
+    color: white; 
+    border-radius: 2px; 
+    font: 300 15px Roboto;
+  }
+}
+
+
+#fab {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: $pink url('http://cbwconline.com/IMG/Codepen/Profile.svg') no-repeat center center;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  
+  &:hover {
+    background: $pink url('http://cbwconline.com/IMG/Codepen/Go.svg') no-repeat center center;
+    -webkit-transform:rotate(90deg);
+        -ms-transform:rotate(90deg);
+            transform:rotate(90deg);
+  }
+}
+

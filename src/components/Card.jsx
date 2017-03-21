@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle} from 'react-materialize';
+import { Card, CardTitle } from 'react-materialize';
 
 export default class MyCard extends React.Component {
   render(){

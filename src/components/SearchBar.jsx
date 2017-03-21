@@ -9,7 +9,7 @@ export default class SearchBar extends React.Component {
    <div className="nav-wrapper">
      <form>
        <div className="input-field">
-         <input id="search" type="search" required/>
+         <input id="search" type="search" placeholder="Search by location" required/>
          <label className="label-icon" for="search"><i className="material-icons">search</i></label>
          <i className="material-icons">close</i>
        </div>
