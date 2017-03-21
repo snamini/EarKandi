@@ -15,9 +15,13 @@ class Home extends Component {
 
 {/*-------------------------Title, Search Bar, Drop Down Genre, Followers button--------------------*/}
                     <Row></Row>
+<<<<<<< HEAD
 
                       <h1 className="title">Creatington</h1>
 
+=======
+                      <h1 class="title">Creatington</h1>
+>>>>>>> 0325dd8581465e017dc325f35757697ae69fdf52
                       <Slider>
                           <Slide
                             src="http://lorempixel.com/580/250/nature/1"
@@ -37,7 +41,10 @@ class Home extends Component {
                             Here's our small slogan.
                           </Slide>
                         </Slider>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0325dd8581465e017dc325f35757697ae69fdf52
                       <Row>
                         <Col s={5} className='search-bar'>
                           <SearchBar/>
