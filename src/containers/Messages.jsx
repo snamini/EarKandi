@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import './Community.css';
 
 // then we use that component class that we just imported to make our special components
 // // Community inherited a bunch of things from the component
