@@ -1,6 +1,6 @@
 import React from 'react';
 //import { GoogleLogin} from 'react-materialize'
-import GoogleLogin from 'react-google-login';
+// import GoogleLogin from 'react-google-login';
 
 
 const responseGoogle = (response) => {
@@ -20,4 +20,3 @@ export default function() {
     onFailure={responseGoogle}
   />)
 }
-  
