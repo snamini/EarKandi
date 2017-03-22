@@ -1,7 +1,7 @@
-
-import React, { PropTypes as T } from 'react'
-import { Jumbotron } from 'react-bootstrap'
-import styles from '../styles/styles.module.css'
+ import React from 'react'
+import { Jumbotron } from 'react-bootstrap';
+import Header from '../components/Header';
+//import styles from '../styles/styles.module.css'
 
 export class Container extends React.Component {
   render() {
@@ -14,7 +14,7 @@ export class Container extends React.Component {
 
     return (
       <Jumbotron>
-
+        <Header isLoggedIn={this.props.route.auth.loggedIn()}/>
         {children}
       </Jumbotron>
     )
@@ -22,3 +22,5 @@ export class Container extends React.Component {
 }
 
 export default Container;
+
+
