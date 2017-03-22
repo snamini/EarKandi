@@ -47,17 +47,34 @@ app.get('/Community', (req, res) => {
 
 app.post('/portfolio', function(req, res){
    console.log("saving in server");
-   console.log(req.body);
+   console.log(req.body.email);
+   console.log(req.body.given_name);
+   console.log(req.body.user_id);
+
+   //FInd the User 
+  User.findOne({"user_id": req.body.user_id}).exec(function(err, doc){
+      if(err){
+        console.log(err);
+      } else if (doc ==null){
+      	console.log("Looks like you are a new user here...");
    //this will work only with google
-  User.create({"email": req.body.email, "name":  given_name, "password": "pass1" }, function(err){
-    if(err){
-      console.log(err);
-      res.send("mongo error")
-    }
-    else {
-      res.send("Saved ");
-    }
-  })
+	  User.create({"user_id": req.body.user_id, "email": req.body.email, "password": "pass1", "name":  req.body.given_name }, function(err){
+	    if(err){
+	      console.log(err);
+	      res.send("mongo error")
+	    }
+	    else {
+	      res.send("Saved ");
+	    }
+	  })      	
+      }
+      else {
+      	console.log("Hello my friend ;)");
+      	console.log(doc);
+        res.send(doc);
+      }
+    })
+
 });
 
 

@@ -6,10 +6,14 @@ var Schema = mongoose.Schema;
 
 // Create a UserSchema with the Schema class
 var UserSchema = new Schema ({
-    email: {
-      type:String,
+    user_id: {
+      type: String,
       required: true,
-      unique: true
+      unique: true,     
+      trim: true
+    },
+    email: {
+      type:String
     },
     password: {
       type: String,
@@ -17,8 +21,7 @@ var UserSchema = new Schema ({
       trim: true
     },
     name: {
-      type: String,
-      required: true
+      type: String
     }
 });
 
